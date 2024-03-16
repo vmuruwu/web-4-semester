@@ -1,0 +1,27 @@
+body {
+    background-color: #fcf0ff;
+    color:rgb(48, 15, 49);
+    font-family: Arial;
+    margin: 0px;
+}
+main {
+    background-color: #b3e2a7;
+    color:#3c1c06;
+    font-family:Helvetica;
+    margin: 0px;
+    padding: 7px;
+}
+footer {
+    background-color: #ebc2d6;
+    color:#17312f;
+    font-family:Impact;
+    margin: 0px;
+    padding: 7px;
+}
+header {
+    background-color: #f2efdb;
+    color:#330a10;
+    font-family:'Gill Sans';
+    margin: 0px;
+    padding: 7px;
+}
