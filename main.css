@@ -1,5 +1,5 @@
 body {
-    background-color: #fedeff;
+    background-color:aliceblue;
     color:#300f31;
     font-family: Arial;
     margin: 0px;
@@ -8,17 +8,20 @@ body {
 header {
     background-color: #fedeff;
     color:#330a10;
-    font-family:'Gill Sans';
-    margin: 0px;
+    font-family:Impact;
     padding: 7px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 main {
     background-color:aliceblue;
     color:#3c1c06;
     font-family:Helvetica;
-    margin: 0px;
     padding: 7px;
+    margin: 10px 20px 34px;
 }
 
 footer {
@@ -27,6 +30,10 @@ footer {
     font-family:Impact;
     margin: 0px;
     padding: 7px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 a {
@@ -54,8 +61,8 @@ a:active {
 }
 
 div.menu {
-    border: 1px double #910046a9;
-    border-radius: 5px;
+    border: 5px double #910046a9;
+    border-radius: 10px;
     width: 300px;
     margin: 0 auto;
     transition: 0.8s 0.4s;
