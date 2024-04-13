@@ -52,3 +52,16 @@ a:active {
     color: #21082a;
     opacity: 0.3;
 }
+
+div.menu {
+    border: 1px double #910046a9;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    transition: 0.8s 0.4s;
+}
+div.menu:hover {
+    background-color: #ffdef8;
+    box-shadow: 0 0 12px #3e18304d;
+    transition: 0.8s;
+}
