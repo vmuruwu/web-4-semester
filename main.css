@@ -1,25 +1,25 @@
 body {
-    background-color: #fcf0ff;
+    background-color: #fedeff;
     color:rgb(48, 15, 49);
     font-family: Arial;
     margin: 0px;
 }
 main {
-    background-color: #e7eed5;
+    background-color:aliceblue;
     color:#3c1c06;
     font-family:Helvetica;
     margin: 0px;
     padding: 7px;
 }
 footer {
-    background-color: #cfa4b9;
+    background-color: #fedeff;
     color:#17312f;
     font-family:Impact;
     margin: 0px;
     padding: 7px;
 }
 header {
-    background-color: #f2efdb;
+    background-color: #fedeff;
     color:#330a10;
     font-family:'Gill Sans';
     margin: 0px;
