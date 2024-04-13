@@ -4,6 +4,7 @@ body {
     font-family: Arial;
     margin: 0px;
 }
+
 header {
     background-color: #fedeff;
     color:#330a10;
@@ -11,6 +12,7 @@ header {
     margin: 0px;
     padding: 7px;
 }
+
 main {
     background-color:aliceblue;
     color:#3c1c06;
@@ -18,6 +20,7 @@ main {
     margin: 0px;
     padding: 7px;
 }
+
 footer {
     background-color: #fedeff;
     color:#17312f;
@@ -25,19 +28,26 @@ footer {
     margin: 0px;
     padding: 7px;
 }
-a:link {
-    color:#53005f;
+
+a {
+    color: #7f0098;
     text-decoration: none;
+    transition: 0.8s 0.2s;
 }
+
+a:link {
+}
+
 a:visited {
-    color: #680091;
-    text-decoration: line-through;
 }
+
 a:hover {
     color:#ff00ae;
     text-decoration: underline;
     text-shadow: 2px 2px 3px #3e18304d;
+    transition: 0.5s;
 }
+
 a:active {
     color: #21082a;
     opacity: 0.3;
