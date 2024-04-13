@@ -1,8 +1,15 @@
 body {
     background-color: #fedeff;
-    color:rgb(48, 15, 49);
+    color:#300f31;
     font-family: Arial;
     margin: 0px;
+}
+header {
+    background-color: #fedeff;
+    color:#330a10;
+    font-family:'Gill Sans';
+    margin: 0px;
+    padding: 7px;
 }
 main {
     background-color:aliceblue;
@@ -18,10 +25,20 @@ footer {
     margin: 0px;
     padding: 7px;
 }
-header {
-    background-color: #fedeff;
-    color:#330a10;
-    font-family:'Gill Sans';
-    margin: 0px;
-    padding: 7px;
+a:link {
+    color:#53005f;
+    text-decoration: none;
+}
+a:visited {
+    color: #680091;
+    text-decoration: line-through;
+}
+a:hover {
+    color:#ff00ae;
+    text-decoration: underline;
+    text-shadow: 2px 2px 3px #3e18304d;
+}
+a:active {
+    color: #21082a;
+    opacity: 0.3;
 }
