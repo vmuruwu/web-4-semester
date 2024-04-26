@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Втюрина Наталья. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: #feffff;
+            border: 1px dotted #8a1629;
+            margin: 15px;
+        }
+        .static {
+            position: relative;
+            z-index: 1;
+        }
+        .position-relative {
+            position: relative;
+            left: 150px;
+            top: -130px;
+            z-index: 0;
+        }
+        .position-relative:hover {
+            position: relative;
+            transition: 0.5s;
+            box-shadow: 0 0 12px #3e18304d;
+            z-index: 2;
+        }
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+        }
+        .position-absolute:hover {
+            position: absolute;
+            transform: scale(1.1);
+            transition: 0.5s;
+            background-color: aquamarine;
+            box-shadow: 0 0 12px #3e18304d;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="position-relative">relative</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="position-absolute">absolute</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+        <div class="static">static</div>
+    </main>
+
+    <footer>
+        &copy; Наталья Втюрина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
