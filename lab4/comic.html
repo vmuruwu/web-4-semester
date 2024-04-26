@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Втюрина Наталья. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .all {
+            position: relative;
+        }
+        img{
+            display:block;
+            margin: auto;
+            padding: 15px;
+            z-index: 0;
+        }
+        .bubble {
+            position: absolute;
+            border: 2px dotted #000000a9;
+            border-radius: 50%;
+            background-color: aliceblue;
+            color: black;
+            box-shadow: 0 0 12px black;
+            visibility: hidden;
+            opacity: 0;
+            font-size: 40px;
+            font-family: Impact;
+            z-index: 1;  
+        }
+        .all:hover .bubble {
+            visibility: visible;
+            opacity: 1;
+        }
+        .one {
+            top:150px;
+            left: 580px;
+            padding: 10px;
+            transition: opacity 1s;
+        }
+        .two {
+            top:135px;
+            left: 540px;
+            padding: 13px;
+            transition: opacity 1.5s;
+        }
+        .three {
+            top:113px;
+            left: 500px;
+            padding: 16px;
+            transition: opacity 2s;
+        }
+        .four {
+            top:85px;
+            left: 450px;
+            padding: 19px;
+            transition: opacity 2.5s;
+        }
+        .five {
+            top: 50px;
+            left: 450px;
+            padding: 19px;
+            transition: opacity 2.5s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="all">
+            <img src="jayjo.jpg" height="800">
+            <div class="bubble one"></div>
+            <div class="bubble two"></div>
+            <div class="bubble three"></div>
+            <div class="bubble four"></div>
+            <div class="bubble five"> I WANT SOME REST</div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Наталья Втюрина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
