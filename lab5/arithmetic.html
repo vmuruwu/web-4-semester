@@ -60,6 +60,14 @@
             let greetings = 'Приветствую вас на этой странице!\nВсегда есть завтра';
             alert(greetings)
         }
+
+        function change_output(button_num, back_color, text_color, border_style) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + button_num;
+            output.style.backgroundColor = back_color;
+            output.style.color = text_color;
+            output.style.borderStyle = border_style
+        }
     </script>
 
     <style>
@@ -71,7 +79,15 @@
             border: double #34053a;
             display: inline-block;
             text-align: center;
-            margin: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        #output {
+            border: 2px solid;
+            width: 300px;
+            height: 40px;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -84,11 +100,22 @@
     <main>
         <label>Первое число: <input type="number" value="0" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="0" id="numberB"></label><br>
+
         <div class="massage" onclick="show_sum()">Найти сумму чисел</div>
         <div class="massage" onclick="show_difference()">Найти разность чисел</div>
         <div class="massage" onclick="show_multiplication()">Найти произведение</div>
         <div class="massage" onclick="show_division()">Найти деление</div>
+
         <div class="massage" onclick="show_author()">Узнать, кто автор страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="change_output(1, 'lightyellow', 'darkred', 'double')">
+            <input type="button" value="Кнопка 2" onclick="change_output(2, 'darkblue', 'lime', 'dotted')">
+            <input type="button" value="Кнопка 3" onclick="change_output(3, 'lightblue', 'purple', 'dashed')"> 
+            <input type="button" value="Кнопка 4" onclick="change_output(4, 'orange', 'darkgreen', 'hidden')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="show_greetings()">
