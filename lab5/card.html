@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Втюрина Наталья. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+
+    <script>
+        function vegetables(){
+            let input1 = document.getElementById('cucumber');
+            let input2 = document.getElementById('tomato');
+            let input3 = document.getElementById('carrot');
+            let input4 = document.getElementById('potato');
+            let output = document.getElementById('output');
+            let that_button = document.getElementById('that_button');
+
+            let a = parseInt(input1.value);
+            let b = parseInt(input2.value);
+            let c = parseInt(input3.value);
+            let d = parseInt(input4.value);
+
+            let result = (a * 150) + (b * 250) + (c * 60) + (d * 30);
+            
+            output.style.visibility = 'visible';
+            output.innerHTML = 'Общая сумма: ' + result + 'р';
+
+            that_button.style.visibility = 'visible';
+        }
+
+        function cleaning() {
+            let output = document.getElementById('output');
+            let that_button = document.getElementById('that_button');
+
+            document.getElementById('cucumber').value = '';
+            document.getElementById('tomato').value = '';
+            document.getElementById('carrot').value = '';
+            document.getElementById('potato').value = '';
+
+            output.style.visibility = 'hidden';
+            that_button.style.visibility = 'hidden';
+        }
+    </script>
+
+    <style>
+        .basket {
+            width: 330px;
+            height: 370px;
+            background-color: #fde7ff;
+            border: double #34053a;
+            display: inline-block;
+            margin-top: 5px;
+            padding-left: 15px;
+            padding-bottom: auto;
+        }
+        p {
+            font-weight: bold;
+        }
+        .not_a_button {
+            width: 300px;
+        }
+        .that_button {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div class="basket">
+            <h1>Корзина товаров</h1>
+            <p> 
+                Огурцы (150 р/кг):<br>
+                <input class="not_a_button" type="number"  min="0" placeholder="Сколько килограммов нужно?" id="cucumber"><br>
+            </p>
+            <p> 
+                Помидоры (250 р/кг):<br>
+                <input class="not_a_button" type="number" min="0" placeholder="Сколько килограммов нужно?" id="tomato"><br>
+            </p>
+            <p> 
+                Морковь (60 р/кг):<br>
+                <input class="not_a_button" type="number" min="0" placeholder="Сколько килограммов нужно?" id="carrot"><br>
+            </p>
+            <p> 
+                Картофель (30 р/кг):<br>
+                <input class="not_a_button" type="number" min="0" placeholder="Сколько килограммов нужно?" id="potato"><br>
+            </p>
+
+            <input type="button" value="Рассчитать" onclick="vegetables()">
+            <input class="that_button" type="button" value="Очистить" onclick="cleaning()" id="that_button">
+            
+            <p id="output"></p>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Наталья Втюрина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
