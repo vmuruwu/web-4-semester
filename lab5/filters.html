@@ -15,6 +15,16 @@
             document.getElementById('blur_output').innerText = value;
             document.getElementById('blur_image').style.filter = 'blur(' + value + ')';
         }
+        function brightness_change() {
+            let value = document.getElementById('brightness_value').value + '%';
+            document.getElementById('brightness_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'brightness(' + value + ')';
+        }
+        function brightness_change() {
+            let value = document.getElementById('brightness_value').value + '%';
+            document.getElementById('brightness_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'brightness(' + value + ')';
+        }
     </script>
     <style>
 
@@ -29,7 +39,13 @@
         <div>
             Фильтр blur:
             <input type="range" min="0" max="20" value="0" onchange="blur_change()" id="blur_value">
-            <span id="blur_output"></span>
+            <span id="blur_output"></span><br>
+            Фильтр brightness:
+            <input type="range" min="0" max="500" value="100" onchange="brightness_change()" id="brightness_value">
+            <span id="brightness_output"></span><br>
+            Фильтр contrast:
+            <input type="range" min="0" max="500" value="100" onchange="contrast_change()" id="contrast_value">
+            <span id="contrast_output"></span><br>
         </div>
         <div class="image_filter"><img src="landscape.jpg" id="blur_image" width="95%"></div>
     </main>
