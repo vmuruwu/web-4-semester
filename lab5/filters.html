@@ -40,6 +40,11 @@
             document.getElementById('invert_output').innerText = value;
             document.getElementById('blur_image').style.filter = 'invert(' + value + ')';
         }
+        function saturate_change() {
+            let value = document.getElementById('saturate_value').value + '%';
+            document.getElementById('saturate_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'saturate(' + value + ')';
+        }
     </script>
     <style>
 
@@ -70,6 +75,9 @@
             Фильтр invert:
             <input type="range" min="0" max="100" value="0" onchange="invert_change()" id="invert_value">
             <span id="invert_output"></span><br>
+            Фильтр saturate:
+            <input type="range" min="0" max="500" value="100" onchange="saturate_change()" id="saturate_value">
+            <span id="saturate_output"></span><br>
         </div>
         <div class="image_filter"><img src="landscape.jpg" id="blur_image" width="95%"></div>
     </main>
