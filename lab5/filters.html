@@ -25,6 +25,11 @@
             document.getElementById('contrast_output').innerText = value;
             document.getElementById('blur_image').style.filter = 'contrast(' + value + ')';
         }
+        function grayscale_change() {
+            let value = document.getElementById('grayscale_value').value + '%';
+            document.getElementById('grayscale_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'grayscale(' + value + ')';
+        }
     </script>
     <style>
 
@@ -46,6 +51,9 @@
             Фильтр contrast:
             <input type="range" min="0" max="500" value="100" onchange="contrast_change()" id="contrast_value">
             <span id="contrast_output"></span><br>
+            Фильтр grayscale:
+            <input type="range" min="0" max="100" value="0" onchange="grayscale_change()" id="grayscale_value">
+            <span id="grayscale_output"></span><br>
         </div>
         <div class="image_filter"><img src="landscape.jpg" id="blur_image" width="95%"></div>
     </main>
