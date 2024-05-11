@@ -30,6 +30,16 @@
             document.getElementById('grayscale_output').innerText = value;
             document.getElementById('blur_image').style.filter = 'grayscale(' + value + ')';
         }
+        function huerotate_change() {
+            let value = document.getElementById('huerotate_value').value + 'deg';
+            document.getElementById('huerotate_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'hue-rotate(' + value + ')';
+        }
+        function invert_change() {
+            let value = document.getElementById('invert_value').value + '%';
+            document.getElementById('invert_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'invert(' + value + ')';
+        }
     </script>
     <style>
 
@@ -54,6 +64,12 @@
             Фильтр grayscale:
             <input type="range" min="0" max="100" value="0" onchange="grayscale_change()" id="grayscale_value">
             <span id="grayscale_output"></span><br>
+            Фильтр hue-rotate:
+            <input type="range" min="0" max="360" value="0" onchange="huerotate_change()" id="huerotate_value">
+            <span id="huerotate_output"></span><br>
+            Фильтр invert:
+            <input type="range" min="0" max="100" value="0" onchange="invert_change()" id="invert_value">
+            <span id="invert_output"></span><br>
         </div>
         <div class="image_filter"><img src="landscape.jpg" id="blur_image" width="95%"></div>
     </main>
