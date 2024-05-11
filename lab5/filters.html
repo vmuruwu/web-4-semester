@@ -45,6 +45,11 @@
             document.getElementById('saturate_output').innerText = value;
             document.getElementById('blur_image').style.filter = 'saturate(' + value + ')';
         }
+        function sepia_change() {
+            let value = document.getElementById('sepia_value').value + '%';
+            document.getElementById('sepia_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'sepia(' + value + ')';
+        }
     </script>
     <style>
 
@@ -78,6 +83,9 @@
             Фильтр saturate:
             <input type="range" min="0" max="500" value="100" onchange="saturate_change()" id="saturate_value">
             <span id="saturate_output"></span><br>
+            Фильтр sepia:
+            <input type="range" min="0" max="100" value="0" onchange="sepia_change()" id="sepia_value">
+            <span id="sepia_output"></span><br>
         </div>
         <div class="image_filter"><img src="landscape.jpg" id="blur_image" width="95%"></div>
     </main>
