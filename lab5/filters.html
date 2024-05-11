@@ -8,6 +8,17 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    
+    <script>
+        function blur_change() {
+            let value = document.getElementById('blur_value').value + 'px';
+            document.getElementById('blur_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'blur(' + value + ')';
+        }
+    </script>
+    <style>
+
+    </style>
 </head>
 <body>
     <header>
@@ -15,13 +26,12 @@
     </header>
 
     <main>
-        <h1>Лабораторная работа 5</h1>
-            <ul>
-                <li><a href="arithmetic.html">Arithmetic</a></li>
-                <li><a href="card.html">Card</a></li>
-                <li><a href="circles.html">Circles</a></li>
-                <li><a href="filters.html">Filters</a></li>
-            </ul>
+        <div>
+            Фильтр blur:
+            <input type="range" min="0" max="20" value="0" onchange="blur_change()" id="blur_value">
+            <span id="blur_output"></span>
+        </div>
+        <div class="image_filter"><img src="landscape.jpg" id="blur_image" width="95%"></div>
     </main>
 
     <footer>
