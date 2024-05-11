@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Втюрина Наталья. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    
+    <script>
+        function click_hide(circle) {
+            circle.style.transition = 'all 0.5s ease'
+            circle.style.width = '0';
+            circle.style.height = '0';
+            circle.style.opacity = '0';
+        }
+
+        function click_show() {
+            let circles = document.querySelectorAll('.circle');
+            circles.forEach (circle => {
+                circle.style.transition = 'all 0.5s ease'
+                circle.style.width = '70px';
+                circle.style.height = '70px';
+                circle.style.opacity = '1';
+            });
+        }
+    </script>
+
+    <style>
+        .circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 70px;
+            font-size: 35px;
+            color: black;
+            cursor: pointer;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <input class="that_button" type="button" value="Вернуть кружочки" onclick="click_show()">
+        <div class="circle" style="background-color: #faebd7; top: 100px; left: 180px;" onclick="click_hide(this)">1</div>
+        <div class="circle" style="background-color: #1c8797; top: 700px; left: 480px;" onclick="click_hide(this)">2</div>
+        <div class="circle" style="background-color: #51e325; top: 490px; left: 600px;" onclick="click_hide(this)">3</div>
+        <div class="circle" style="background-color: #cc0096; top: 140px; left: 800px;" onclick="click_hide(this)">4</div>
+        <div class="circle" style="background-color: #fff45d; top: 380px; left: 120px;" onclick="click_hide(this)">5</div>
+        <div class="circle" style="background-color: #ff0000; top: 240px; left: 550px;" onclick="click_hide(this)">6</div>
+        <div class="circle" style="background-color: #ff9d00; top: 200px; left: 270px;" onclick="click_hide(this)">7</div>
+        <div class="circle" style="background-color: #8900af; top: 550px; left: 330px;" onclick="click_hide(this)">8</div>
+        <div class="circle" style="background-color: #00ffc3; top: 400px; left: 360px;" onclick="click_hide(this)">9</div>
+        <div class="circle" style="background-color: #d9ff00; top: 90px; left: 460px;" onclick="click_hide(this)">10</div>
+    </main>
+
+    <footer>
+        &copy; Наталья Втюрина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
