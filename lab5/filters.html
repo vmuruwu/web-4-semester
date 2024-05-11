@@ -20,10 +20,10 @@
             document.getElementById('brightness_output').innerText = value;
             document.getElementById('blur_image').style.filter = 'brightness(' + value + ')';
         }
-        function brightness_change() {
-            let value = document.getElementById('brightness_value').value + '%';
-            document.getElementById('brightness_output').innerText = value;
-            document.getElementById('blur_image').style.filter = 'brightness(' + value + ')';
+        function contrast_change() {
+            let value = document.getElementById('contrast_value').value + '%';
+            document.getElementById('contrast_output').innerText = value;
+            document.getElementById('blur_image').style.filter = 'contrast(' + value + ')';
         }
     </script>
     <style>
