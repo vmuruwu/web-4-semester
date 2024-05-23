@@ -27,15 +27,19 @@
             let user_number = parseInt(input.value);
             let message = document.getElementById('result');
             if(user_number < 1 || user_number > 100){
+                message.style.color = 'red'
                 message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
             }
             else if(Number.isInteger(user_number) == false){
+                message.style.color = 'red'
                 message.innerHTML = 'Вы ничего не ввели, либо это не число';
             }
             else if(user_number > number) {
+                message.style.color = 'black'
                 message.innerHTML = 'Вы ввели слишком большое число';
             }
             else if(user_number < number) {
+                message.style.color = 'black'
                 message.innerHTML = 'Вы ввели слишком маленькое число';
             }
             else {
@@ -59,11 +63,25 @@
             user_number.value = '';
 
         }
+
+        function show_rules() {
+            let rule = document.getElementsByClassName('rules_info');
+            rule[0].style.display = 'block';
+            let button = document.getElementById('button_show');
+            button.style.display = 'none';
+        }
+
+        function hide_rules() {
+            let rule = document.getElementsByClassName('rules_info');
+            rule[0].style.display = 'none';
+            let button = document.getElementById('button_show');
+            button.style.display = 'block';
+        }
     </script>
 
     <style>
         .game {
-            width: 400px;
+            width: 80%;
             border-radius: 15px;
             border: 2px solid black;
             text-align: center;
@@ -72,9 +90,32 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 10px auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fdecff;
+            line-height: 20px;
+        }
+        .rules {
+            width: 80%;
+            border-radius: 8px;
+            border: 4px dotted black;
+            font-size: 15px;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
             margin-bottom: 10px;
             padding: 10px;
+            background-color: #fff4fe;
         }
+
+        button {
+            margin: 5px;
+            background-color: white;
+            color: #8a006c;
+            font-size: 16px;
+        }
+
     </style>
 </head>
 <body>
@@ -109,6 +150,21 @@
             </div>
             <div>
                 <button onclick="again()">Сыграть ещё раз</button>
+            </div>
+        </div>
+        
+        <div class="rules">
+            <button onclick="show_rules()" id="button_show">Показать правила игры</button>
+            <div style="display: none;" class="rules_info">
+                <button onclick="hide_rules()">Скрыть правила игры</button>
+                <ol type="A">
+                    <li>Нажмите на кнопку "Сыграть в игру"</li>
+                    <li>Введите число в диапазоне от 1 до 100</li>
+                    <li>Это должно быть число!</li>
+                    <li>Далее нажмите на кнопку "Угадать"</li>
+                    <li>Если не угадали, вы получите подсказку</li>
+                    <li>Когда угадаете, вы увидите количество сделанных попыток и сможете сыграть ещё раз</li>
+                </ol>
             </div>
         </div>
     </main>
