@@ -35,6 +35,9 @@
             if( a == 0 && b == 0 && c == 0 && d == 0 && e == 0 && f == 0 && g == 0){
                 message.innerHTML = 'Выберите хотя бы один товар!';
             }
+            else if(a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0 || g < 0) {
+                message.innerHTML = 'Количество товаров должно быть положительным или равным 0';
+            }
             else {
                 result = (a * 90) + (b * 50) + (c * 150) + (d * 100) + (e * 80) + (f * 95) + (g * 140);
                 output.innerHTML = 'Итого: ' + result + 'р';
@@ -55,6 +58,27 @@
             padding: 4px;
             border: 1.5px solid black;
         }
+        .output {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .exception {
+            font-style: italic;
+            font-weight: bold;
+            color: #7c0000;
+            background-color: #fff540;
+            width: 270px;
+        }
+        .budget {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        button {
+            margin-top: 10px;
+            width: 40px;
+            height: 35px;
+            font-size: 17px;
+        }
     </style>
 </head>
 <body>
@@ -64,8 +88,10 @@
 
     <main>
         <div>
-            Мой баланс:
-            <input type="number" value="0" min="0" style="width: 150px;" id="budget"><br>
+            <p class="budget">
+                Мой баланс:
+                <input type="number" value="0" min="0" style="width: 150px;" id="budget">
+            </p>
             <table border="1">
                 <tr>
                     <th>&nbsp;</th>
@@ -130,11 +156,11 @@
                     </td>
                 </tr>
             </table>
-            <button onclick="shopping_cart()">Ok</button> <br>
+            <button onclick="shopping_cart()">OK</button> <br>
         </div>
 
-        <p id="output"></p>
-        <p id="exception"></p>
+        <p class="output" id="output"></p>
+        <p class="exception" id="exception"></p>
     </main>
 
     <footer>
