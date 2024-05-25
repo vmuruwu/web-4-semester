@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Втюрина Наталья. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    
+    <script>
+        function shopping_cart() {
+            let input1 = document.getElementById('number_milk');
+            let input2 = document.getElementById('number_bread');
+            let input3 = document.getElementById('number_butter');
+            let input4 = document.getElementById('number_kefir');
+            let input5 = document.getElementById('number_cookie');
+            let input6 = document.getElementById('number_candy');
+            let input7 = document.getElementById('number_chips');
+            let input8 = document.getElementById('budget')
+            let output = document.getElementById('output');
+            let message = document.getElementById('exception');
+            let result = 0;
+
+            let a = parseInt(input1.value);
+            let b = parseInt(input2.value);
+            let c = parseInt(input3.value);
+            let d = parseInt(input4.value);
+            let e = parseInt(input5.value);
+            let f = parseInt(input6.value);
+            let g = parseInt(input7.value);
+            let budget = parseInt(input8.value);
+
+            if( a == 0 && b == 0 && c == 0 && d == 0 && e == 0 && f == 0 && g == 0){
+                message.innerHTML = 'Выберите хотя бы один товар!';
+            }
+            else {
+                result = (a * 90) + (b * 50) + (c * 150) + (d * 100) + (e * 80) + (f * 95) + (g * 140);
+                output.innerHTML = 'Итого: ' + result + 'р';
+                if(result > budget){
+                    message.innerHTML = 'У вас недостаточно средств!'
+                }
+            }    
+        }
+    </script>
+
+    <style>
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin: 10px;
+        }
+        th, td {
+            padding: 4px;
+            border: 1.5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div>
+            Мой баланс:
+            <input type="number" value="0" min="0" style="width: 150px;" id="budget"><br>
+            <table border="1">
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Молоко</td>
+                    <td>90р</td>
+                    <td>
+                        <input type="number" value="0" min="0" style="width: 96%;" id="number_milk">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Хлеб белый</td>
+                    <td>50р</td>
+                    <td>
+                        <input type="number" value="0" min="0" style="width: 96%;" id="number_bread">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Масло, 200гр</td>
+                    <td>150р</td>
+                    <td>
+                        <input type="number" value="0" min="0" style="width: 96%;" id="number_butter">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Кефир</td>
+                    <td>100р</td>
+                    <td>
+                        <input type="number" value="0" min="0" style="width: 96%;" id="number_kefir">
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Печенье</td>
+                    <td>80р</td>
+                    <td>
+                        <input type="number" value="0" min="0" style="width: 96%;" id="number_cookie">
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Конфеты</td>
+                    <td>95р</td>
+                    <td>
+                        <input type="number" value="0" min="0" style="width: 96%;" id="number_candy">
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Чипсы</td>
+                    <td>140р</td>
+                    <td>
+                        <input type="number" value="0" min="0" style="width: 96%;" id="number_chips">
+                    </td>
+                </tr>
+            </table>
+            <button onclick="shopping_cart()">Ok</button> <br>
+        </div>
+
+        <p id="output"></p>
+        <p id="exception"></p>
+    </main>
+
+    <footer>
+        &copy; Наталья Втюрина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>

@@ -27,19 +27,19 @@
             let user_number = parseInt(input.value);
             let message = document.getElementById('result');
             if(user_number < 1 || user_number > 100){
-                message.style.color = 'red'
+                message.style.color = 'red';
                 message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
             }
             else if(Number.isInteger(user_number) == false){
-                message.style.color = 'red'
+                message.style.color = 'red';
                 message.innerHTML = 'Вы ничего не ввели, либо это не число';
             }
             else if(user_number > number) {
-                message.style.color = 'black'
+                message.style.color = 'black';
                 message.innerHTML = 'Вы ввели слишком большое число';
             }
             else if(user_number < number) {
-                message.style.color = 'black'
+                message.style.color = 'black';
                 message.innerHTML = 'Вы ввели слишком маленькое число';
             }
             else {
