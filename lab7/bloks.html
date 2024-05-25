@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Втюрина Наталья. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+
+    <script>
+        function add_new_block() {
+            let new_block = document.createElement('div');
+            new_block.style.backgroundColor = 'pink';
+            new_block.style.height = '40px';
+            new_block.style.border = 'solid';
+            new_block.style.borderWidth = '2px';
+            new_block.style.borderColor = 'black';
+            new_block.style.width = '300px';
+            new_block.style.margin = '7px';
+
+            document.querySelector('main').appendChild(new_block);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="add_new_block()">Добавить блок</button>
+    </main>
+
+    <footer>
+        &copy; Наталья Втюрина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
