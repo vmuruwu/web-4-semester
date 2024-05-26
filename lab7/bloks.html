@@ -64,6 +64,88 @@
                 main.appendChild(new_block);
             }
         }
+
+        function add10_80() {
+            let main = document.querySelector('main');
+
+            for(let i = 10; i >= -80; i += (-3)){
+                let new_block = document.createElement('div');
+                new_block.style.display = "inline-block"
+                new_block.style.width = '20px';
+                new_block.style.height = '20px';
+                new_block.style.border = '2px solid';
+                new_block.style.borderRadius = '50%';
+                new_block.style.backgroundColor = '#fffcad';
+                new_block.style.margin = '7px';
+                new_block.style.color = 'black';
+                new_block.style.textAlign = 'center';
+                new_block.style.lineHeight = '20px';
+                new_block.style.fontWeight = 'bold';
+                new_block.style.fontSize = '12px';
+
+                new_block.innerHTML = `${i}`;
+
+                main.appendChild(new_block);
+            }
+        }
+
+        function opacity_block() {
+            let main = document.querySelector('main');
+
+            for(let i = 0; i < 10; i++){
+                let new_block = document.createElement('div');
+                new_block.style.display = "inline-block"
+                new_block.style.width = '40px';
+                new_block.style.height = '40px';
+                new_block.style.border = '2px solid';
+                new_block.style.backgroundColor = 'brown';
+                new_block.style.margin = '7px';
+                new_block.style.color = 'black';
+                new_block.style.textAlign = 'center';
+                new_block.style.lineHeight = '40px';
+                new_block.style.fontWeight = 'bold';
+                new_block.style.fontSize = '18px';
+
+                new_block.style.opacity = `${i*10}%`;
+
+                new_block.innerHTML = `${i+1}`;
+
+                main.appendChild(new_block);
+            }
+        }
+
+        function colored_circles() {
+            let main = document.querySelector('main');
+            let input = document.getElementById('number_blocks');
+            let number = parseInt(input.value);
+
+            for(let i = number; i >= 1; i += (-1)){
+                let new_block = document.createElement('div');
+                new_block.style.display = "inline-block"
+                new_block.style.width = '40px';
+                new_block.style.height = '40px';
+                new_block.style.border = '2px solid';
+                new_block.style.borderRadius = '50%';
+                new_block.style.margin = '7px';
+                new_block.style.color = 'black';
+                new_block.style.textAlign = 'center';
+                new_block.style.lineHeight = '40px';
+                new_block.style.fontWeight = 'bold';
+                new_block.style.fontSize = '18px';
+
+                if(i%2 == 0) {
+                    new_block.style.backgroundColor = '#76e84c';
+                }
+                else {
+                    new_block.style.backgroundColor = '#ff5c5c'
+                }
+
+                new_block.innerHTML = `${i}`;
+
+                main.appendChild(new_block);
+            }
+
+        }
     </script>
 
     <style>
@@ -79,11 +161,14 @@
 
     <main>
         <div>
-            Введите количество блоков:
+            Введите количество блоков/кругов:
             <input type="number" value="1" min="1" id="number_blocks"><br>
             <button onclick="add_new_block()">Добавить блок</button>
             <button onclick="add_new_blocks()">Добавить блоки</button>
             <button onclick="add20_50()">20 => 50</button>
+            <button onclick="add10_80()">10 => -80</button>
+            <button onclick="opacity_block()">Полупрозрачные блоки</button>
+            <button onclick="colored_circles()">Цветные круги</button>
         </div>
     </main>
 
