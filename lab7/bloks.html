@@ -22,7 +22,55 @@
 
             document.querySelector('main').appendChild(new_block);
         }
+
+        function add_new_blocks() {
+            let main = document.querySelector('main');
+            let input = document.getElementById('number_blocks');
+            let number = parseInt(input.value);
+            for(let i = 0; i < number; i++){
+                let new_blocks = document.createElement('div');
+                new_blocks.style.backgroundColor = 'pink';
+                new_blocks.style.height = '40px';
+                new_blocks.style.margin = '7px';
+                new_blocks.style.border = 'solid';
+                new_blocks.style.borderWidth = '2px';
+                new_blocks.style.borderColor = 'black';
+                new_blocks.style.padding = '5px';
+                new_blocks.style.fontWeight = 'bold';
+                new_blocks.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2 * i**2}`;
+                new_blocks.style.width = `${(i+10)*10+100}px`;
+
+                main.appendChild(new_blocks);
+            } 
+        }
+
+        function add20_50() {
+            let main = document.querySelector('main');
+
+            for(let i = 20; i <= 50; i += 2.5){
+                let new_block = document.createElement('div');
+                new_block.style.width = '60px';
+                new_block.style.height = '40px';
+                new_block.style.border = '2px solid';
+                new_block.style.backgroundColor = '#d2a7df';
+                new_block.style.margin = '7px';
+                new_block.style.color = 'black';
+                new_block.style.textAlign = 'center';
+                new_block.style.lineHeight = '40px';
+                new_block.style.fontWeight = 'bold';
+
+                new_block.innerHTML = `${i}`;
+
+                main.appendChild(new_block);
+            }
+        }
     </script>
+
+    <style>
+        button {
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,7 +78,13 @@
     </header>
 
     <main>
-        <button onclick="add_new_block()">Добавить блок</button>
+        <div>
+            Введите количество блоков:
+            <input type="number" value="1" min="1" id="number_blocks"><br>
+            <button onclick="add_new_block()">Добавить блок</button>
+            <button onclick="add_new_blocks()">Добавить блоки</button>
+            <button onclick="add20_50()">20 => 50</button>
+        </div>
     </main>
 
     <footer>
