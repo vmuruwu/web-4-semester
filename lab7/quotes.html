@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Втюрина Наталья. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+
+    <script>
+        function show_exchange(){
+            const exchange = [
+                5.005, 4.995, 4.98, 4.995, 4.91, 4.91, 4.89, 4.84,
+                4.64, 4.585
+            ]
+            const date = [
+                '14.05.2024','15.05.2024', '16.05.2024', '17.05.2024',
+                '20.05.2024', '21.05.2024', '22.05.2024', '23.05.2024',
+                '24.05.2024', '25.05.2024'
+            ]
+            let table = document.getElementById('stocks_table');
+            
+            let thead = document.createElement('thead');
+            let tbody = document.createElement('tbody');
+
+            let header_row = document.createElement('tr');
+            let header_date = document.createElement('th');
+            header_date.textContent = 'Дата';
+            let header_price = document.createElement('th');
+            header_price.textContent = 'Цена акций';
+            let header_difference = document.createElement('th');
+            header_difference.textContent = 'Разница';
+
+            header_row.appendChild(header_date);
+            header_row.appendChild(header_price);
+            header_row.appendChild(header_difference);
+            thead.appendChild(header_row);
+            table.appendChild(thead);
+            
+            let sum = 0;
+            let max_price = Number.MIN_VALUE;
+            let min_price = Number.MAX_VALUE;
+
+            for (let i = 0; i < exchange.length; i++) {
+                let row = document.createElement('tr');
+
+                let dates = document.createElement('td');
+                dates.innerText = date[i];
+
+                let price = document.createElement('td');
+                price.innerText = exchange[i];
+
+                let difference = document.createElement('td');
+                if (i > 0) {
+                    let difference_value = exchange[i] - exchange[i - 1];
+                    difference.innerText = difference_value.toFixed(2);        
+                }
+                else {
+                    difference.textContent = '';
+                }
+                sum += exchange[i];
+                if (exchange[i] > max_price) {
+                        max_price = exchange[i];
+                }
+                if (exchange[i] < min_price) {
+                        min_price = exchange[i];
+                }
+
+                row.appendChild(dates);
+                row.appendChild(price);
+                row.appendChild(difference);
+                tbody.appendChild(row);
+            }
+
+            table.appendChild(tbody);
+            document.querySelector('main').appendChild(table);
+            table.setAttribute('border', '1');
+            
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+
+            let main = document.querySelector('main');
+            let output_1 = document.createElement('div');
+            output_1.innerHTML = 'Среднее значение курса: ' + average;
+            let output_2 = document.createElement('div');
+            output_2.innerHTML = 'Минимальное значение курса: ' + min_price;
+            let output_3 = document.createElement('div');
+            output_3.innerHTML = 'Максимальное значение курса: ' + max_price;
+            main.appendChild(output_1);
+            main.appendChild(output_2);
+            main.appendChild(output_3);
+        }
+    </script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+            text-align: center;
+            border: 2.5px solid black;
+        }
+        th {
+            font-weight: bold;
+        }
+        td {
+            padding: 4px;
+        }
+        div {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="show_exchange()" id="button">Курс акций Фармсинтез</button>
+        <table border="1" id="stocks_table"></table>
+    </main>
+
+    <footer>
+        &copy; Наталья Втюрина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
