@@ -10,13 +10,20 @@ function showDate(){
     let date = document.querySelector('.date');
     let week = document.querySelector('.week');
     
-    let today = new Date();
+    const today = new Date();
+    const options = { timeZone: 'Pacific/Auckland', hour12: false };
+    const koreanDateTime = today.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+    const brazilianDateTime = today.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+    const canadianDateTimeEastern = today.toLocaleString('en-CA', { timeZone: 'America/Toronto' });
+    const newZealandDateTime = today.toLocaleString('en-NZ', { timeZone: 'Pacific/Auckland' });
+    const indianDateTime = today.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
     out1.innerHTML = 'Дата и время для русской локали: ' + today.toLocaleString('ru-RU');
-    out2.innerHTML = 'Дата и время для локали Болгарии: ' + today.toLocaleString('bg-BG');
-    out3.innerHTML = 'Дата и время для локали Чехии: ' + today.toLocaleString('cs-CZ');
-    out4.innerHTML = 'Дата и время для локали Германии: ' + today.toLocaleString('de-DE');
-    out5.innerHTML = 'Дата и время для локали Греции: ' + today.toLocaleString('el-GR');
-    out6.innerHTML = 'Дата и время для локали Канады: ' + today.toLocaleString('en-CA');
+    out2.innerHTML = 'Дата и время для локали Южной Кореи: ' + koreanDateTime;
+    out3.innerHTML = 'Дата и время для локали Новой Зеландии: ' + newZealandDateTime;
+    out4.innerHTML = 'Дата и время для локали Бразилии: ' + brazilianDateTime;
+    out5.innerHTML = 'Дата и время для локали Индии: ' + indianDateTime
+    out6.innerHTML = 'Дата и время для локали Канады: ' + canadianDateTimeEastern;
+    
     year.innerHTML = 'Текущий год: ' + today.getFullYear();
     nowMonth = today.getMonth();
     const MonthD = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь', ]
