@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Втюрина Наталья. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+
+    <script>
+        function getWeather() {
+            const today = new Date().toISOString().split('T')[0]; // Получаем сегодняшнюю дату
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=55.7558&longitude=37.6176&hourly=temperature_2m&start_date=${today}&end_date=${today}`;
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    const hourly = data.hourly.time;
+                    const temperatures = data.hourly.temperature_2m;
+
+                    const times = {
+                        '08:00': null,
+                        '12:00': null,
+                        '20:00': null
+                    };
+
+                    hourly.forEach((time, index) => {
+                        const hour = time.split('T')[1].substring(0, 5);
+                        if (times.hasOwnProperty(hour)) { // Эта проверка гарантирует, что обрабатываются только интересующие нас часы
+                            times[hour] = temperatures[index];
+                        }
+                    });
+
+                    const rateInfo = document.getElementById('rate_info');
+                    rateInfo.innerHTML = `
+                        <div class="weather-info">
+                            <h2>Температура на сегодня</h2>
+                            <div class="detail">
+                                <p>8:00: ${times['08:00'] + ' °C'}</p>
+                                <p>12:00: ${times['12:00'] + ' °C'}</p>
+                                <p>20:00: ${times['20:00'] + ' °C'}</p>
+                            </div>
+                        </div>
+                    `;
+                })
+        }
+    </script>
+
+    <style>
+        .weather-info {
+            margin: 5px;
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+        }
+        h2 {
+            border: 2px double #6e0033;
+            border-radius: 20px;
+            background-color: #ff9ecb;
+            color: black;
+            width: 360px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .detail {
+            background-color: #ffd2e7;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width:fit-content;
+            width: 360px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="getWeather()">Погода</button>
+        <div id="rate_info"></div>
+    </main>
+
+    <footer>
+        &copy; Наталья Втюрина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
