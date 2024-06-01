@@ -4,7 +4,7 @@ function showTime(){
     document.getElementById('time').innerHTML = currentTime;
     document.querySelector('.time').innerHTML = currentTime;
 
-    time = document.querySelector('.strelka')
-    time.style.transform = `rotate(${new Date().getSeconds() * 6}deg) translate(0, -75px)`; 
+    time = document.querySelector('.second-hand')
+    time.style.transform = `rotate(${new Date().getSeconds() * 6}deg) translate(0, -75px)`;
 }
 setInterval(showTime,1000);
